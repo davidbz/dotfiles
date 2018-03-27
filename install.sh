@@ -30,6 +30,7 @@ sudo pacman -S i3 rofi \
                     gcc \
                     autoconf \
                     gdb \
+                    cmake \
                     docker \
                     chromium \
                     openssh \
@@ -37,7 +38,9 @@ sudo pacman -S i3 rofi \
                     sed \
                     the_silver_searcher \
                     tree \
-                    wget
+                    wget \
+                    nodejs \
+                    jq
 
 echo "Cleaning up cache"
 sudo pacman -Sc
