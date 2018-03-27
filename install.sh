@@ -40,10 +40,14 @@ sudo pacman -S i3 rofi \
                     tree \
                     wget \
                     nodejs \
-                    jq
+                    jq \
+                    coreutils \
+                    yaourt
 
 echo "Cleaning up cache"
 sudo pacman -Sc
 
 yaourt --noconfirm parcellite
-yaourt --noconfirmdeepin-screenshot
+yaourt --noconfirm deepin-screenshot
+yaourt --noconfirm ttf-ms-fonts
+yaourt --noconfirm sublime
