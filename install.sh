@@ -8,10 +8,10 @@ echo "Refreshing pacman keys"
 sudo pacman-key --refresh-keys
 
 echo "Refreshing mirrors"
-sudo pacman -Syyu
+sudo pacman -Sy
 
 echo "Installing packges"
-sudo pacman -S i3 rofi \
+sudo pacman -S --needed i3 rofi \
                     termite \
                     scrot \
                     imagemagick \
