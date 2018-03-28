@@ -1,0 +1,13 @@
+[user]
+        name = David Ben Zakai
+        email = david.benzakai@gmail.com
+[alias]
+        ca = commit --amend --reuse-message=HEAD
+        c = commit -m "dummy"
+        co = checkout
+        b = branch --sort=committerdate
+        lg = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%an]" --decorate --date=short
+        s = status -s
+        ps = push --no-verify
+        l = log --pretty=oneline -n 20 --graph --abbrev-commit
+
