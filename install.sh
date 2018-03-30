@@ -2,8 +2,6 @@
 
 SCRIPT_DIRECTORY=$(cd `dirname $0` && pwd)
 
-cp -vfr ${SCRIPT_DIRECTORY}/dotfiles/* ~/
-
 echo "Refreshing pacman keys"
 sudo pacman-key --refresh-keys
 
@@ -50,3 +48,6 @@ sudo pacman -Sc
 #yaourt --noconfirm deepin-screenshot
 #yaourt --noconfirm ttf-ms-fonts
 #yaourt --noconfirm sublime
+
+echo "Copying dotfiles"
+cp -vfr ${SCRIPT_DIRECTORY}/dotfiles/* ~/
