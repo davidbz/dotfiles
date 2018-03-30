@@ -54,6 +54,10 @@ bindsym $mod+l exec ~/.config/i3/pixelate_lock.sh
 # clipboard manager
 exec --no-startup-id /usr/bin/parcellite
 
+# keyboard layout
+exec --no-startup-id "setxkbmap -layout us,il"
+exec --no-startup-id "setxkbmap -option 'grp:alt_shift_toggle'"
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
