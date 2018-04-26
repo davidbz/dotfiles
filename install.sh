@@ -44,10 +44,17 @@ sudo pacman -S --needed i3 rofi \
 echo "Cleaning up cache"
 sudo pacman -Sc
 
-#yaourt --noconfirm parcellite
-#yaourt --noconfirm deepin-screenshot
-#yaourt --noconfirm ttf-ms-fonts
-#yaourt --noconfirm sublime
+if pacman -Q yaourt > /dev/null 2>&1; then
+	yaourt --noconfirm parcellite
+	yaourt --noconfirm deepin-screenshot
+	yaourt --noconfirm ttf-ms-fonts
+	yaourt --noconfirm sublime
+fi
+
+if pacman -Q zsh > /dev/null 2>&1; then
+	chsh -s $(whereis zsh | awk '{print $2}')
+fi
 
 echo "Copying dotfiles"
 cp -vfr ${SCRIPT_DIRECTORY}/dotfiles/* ~/
+
