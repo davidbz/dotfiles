@@ -11,4 +11,3 @@ then
   # Remove trailing colon and whitespace
   i3-msg "rename workspace to \"$num\""
 fi
-

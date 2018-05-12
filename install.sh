@@ -44,17 +44,23 @@ sudo pacman -S --needed i3 rofi \
 echo "Cleaning up cache"
 sudo pacman -Sc
 
+declare -a YAOURT_PKGS=("parcellite" "deepin-screenshot" "ttf-ms-fonts" "sublime")
 if pacman -Q yaourt > /dev/null 2>&1; then
-	yaourt --noconfirm parcellite
-	yaourt --noconfirm deepin-screenshot
-	yaourt --noconfirm ttf-ms-fonts
-	yaourt --noconfirm sublime
+     for p in "${YAOURT_PKGS[@]}"
+     do
+        echo "Using yaourt to install ${p}"
+        yaourt --noconfirm ${p}
+     done
 fi
 
 if pacman -Q zsh > /dev/null 2>&1; then
 	chsh -s $(whereis zsh | awk '{print $2}')
 fi
 
-echo "Copying dotfiles"
+echo "Deploying dotfiles"
 cp -vfr ${SCRIPT_DIRECTORY}/dotfiles/* ~/
 
+ZSH_RC_ADDITIONALS="[ -f ~/.aliases ] && source ~/.aliases"
+if ! grep -q "${ZSH_RC_ADDITIONALS}" ~/.zshrc; then
+  echo "${ZSH_RC_ADDITIONALS}" >> ~/.zshrc
+fi

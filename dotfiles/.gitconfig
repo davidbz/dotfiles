@@ -10,4 +10,3 @@
         s = status -s
         ps = push --no-verify
         l = log --pretty=oneline -n 20 --graph --abbrev-commit
-
