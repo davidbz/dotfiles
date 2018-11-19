@@ -9,12 +9,7 @@ echo "Refreshing mirrors"
 sudo pacman -Sy
 
 echo "Installing packges"
-sudo pacman -S --needed i3 rofi \
-                    termite \
-                    scrot \
-                    imagemagick \
-                    feh \
-                    zsh \
+sudo pacman -S --needed zsh \
                     git \
                     unzip \
                     unrar \
@@ -34,31 +29,25 @@ sudo pacman -S --needed i3 rofi \
                     openssh \
                     rsync \
                     sed \
-                    the_silver_searcher \
                     tree \
                     wget \
                     nodejs \
                     jq \
-                    coreutils
+                    coreutils \
+                    yay
 
 echo "Cleaning up cache"
 sudo pacman -Sc
 
-declare -a YAOURT_PKGS=("parcellite" "deepin-screenshot" "ttf-ms-fonts" "sublime")
-if pacman -Q yaourt > /dev/null 2>&1; then
-     for p in "${YAOURT_PKGS[@]}"
-     do
-        echo "Using yaourt to install ${p}"
-        yaourt --noconfirm ${p}
-     done
-fi
+pushd /tmp/
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+popd
 
 if pacman -Q zsh > /dev/null 2>&1; then
 	chsh -s $(whereis zsh | awk '{print $2}')
 fi
-
-echo "Deploying dotfiles"
-cp -vfr ${SCRIPT_DIRECTORY}/dotfiles/* ~/
 
 ZSH_RC_ADDITIONALS="[ -f ~/.aliases ] && source ~/.aliases"
 if ! grep -q "${ZSH_RC_ADDITIONALS}" ~/.zshrc; then
