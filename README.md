@@ -7,7 +7,7 @@ My setup. Using Arch and i3-gaps.
 * [Arch installation guide](https://wiki.archlinux.org/index.php/installation_guide)
 * [i3](https://wiki.archlinux.org/index.php/i3)
 
-### Installing
+## Installing
 
 Install the following using pacman:
 
@@ -15,6 +15,12 @@ Install the following using pacman:
 xorg-xinit
 xorg
 i3-gaps
+```
+
+Install the following using yay:
+```
+st-git
+ttf-ms-fonts
 ```
 
 ## Configuring

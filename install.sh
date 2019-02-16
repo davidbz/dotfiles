@@ -33,8 +33,7 @@ sudo pacman -S --needed zsh \
                     wget \
                     nodejs \
                     jq \
-                    coreutils \
-                    yay
+                    coreutils
 
 echo "Cleaning up cache"
 sudo pacman -Sc
