@@ -33,7 +33,8 @@ sudo pacman -S --needed zsh \
                     wget \
                     nodejs \
                     jq \
-                    coreutils
+                    coreutils \
+		    go
 
 echo "Cleaning up cache"
 sudo pacman -Sc
@@ -52,3 +53,4 @@ ZSH_RC_ADDITIONALS="[ -f ~/.aliases ] && source ~/.aliases"
 if ! grep -q "${ZSH_RC_ADDITIONALS}" ~/.zshrc; then
   echo "${ZSH_RC_ADDITIONALS}" >> ~/.zshrc
 fi
+
