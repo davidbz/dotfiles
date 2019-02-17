@@ -27,11 +27,17 @@ pacman -S xorg-xinit \
           nodejs \
           coreutils \
           go \
+          zsh \
           compton
 
 echo "Cleaning up cache"
 pacman -Sc
 
+# Deploy vimrc
+git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
+sh ~/.vim_runtime/install_awesome_vimrc.sh
+
+# Deploy yay
 if pacman -Q yay > /dev/null 2>&1; then
      pushd /tmp/
      git clone https://aur.archlinux.org/yay.git
@@ -41,6 +47,7 @@ if pacman -Q yay > /dev/null 2>&1; then
      rm -rf /tmp/yay
 fi
 
+# Configure zsh
 if pacman -Q zsh > /dev/null 2>&1; then
 	chsh -s $(whereis zsh | awk '{print $2}')
 fi
