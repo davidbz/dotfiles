@@ -183,6 +183,9 @@ exec_always --no-startup-id /usr/bin/feh --bg-scale ~/.wallpaper.jpg
 # Gaps
 gaps inner 8
 
+# Goodies
+#bindsym $mod+Shift+l exec ~/.config/i3/pixelate_lock.sh
+#bindsym $mod+t exec ~/.config/i3/rename_workspace.sh
 
 # RGB
 set $cyan0	 #4ec2f7
