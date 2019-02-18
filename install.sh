@@ -29,7 +29,8 @@ pacman -S xorg-xinit \
           go \
           zsh \
           compton \
-          feh
+          feh \
+          termite
 
 echo "Cleaning up cache"
 pacman -Sc
@@ -49,7 +50,6 @@ if pacman -Q yay > /dev/null 2>&1; then
 fi
 
 readonly YAY_PKGS="\
-     st-git \
      ttf-ms-fonts \
      parcellite \
 "
