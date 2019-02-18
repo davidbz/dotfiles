@@ -181,7 +181,10 @@ exec --no-startup-id /usr/bin/setxkbmap -option grp:switch,grp:alt_shift_toggle,
 exec_always --no-startup-id /usr/bin/feh --bg-scale ~/.wallpaper.jpg
 
 # Gaps
-gaps inner 8
+gaps inner 25
+gaps outer 0
+smart_borders on
+new_window none
 
 # Goodies
 #bindsym $mod+Shift+l exec ~/.config/i3/pixelate_lock.sh
