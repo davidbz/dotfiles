@@ -14,7 +14,7 @@ cursor_blink = system
 foreground      = #d0d0d0
 foreground_bold = #d0d0d0
 cursor          = #d0d0d0
-background      = #151515
+background = rgba(48,48,48,0.90)
 
 # black
 color0  = #151515
