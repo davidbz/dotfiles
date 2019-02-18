@@ -28,7 +28,8 @@ pacman -S xorg-xinit \
           coreutils \
           go \
           zsh \
-          compton
+          compton \
+          feh
 
 echo "Cleaning up cache"
 pacman -Sc
@@ -46,6 +47,18 @@ if pacman -Q yay > /dev/null 2>&1; then
      popd
      rm -rf /tmp/yay
 fi
+
+readonly YAY_PKGS="\
+     st-git \
+     ttf-ms-fonts \
+     parcellite \
+"
+
+for pkg in ${YAY_PKGS}; do
+     if ! yay -Q ${pkg} > /dev/null 2>&1; then
+          yay -S ${pkg}
+     fi
+done
 
 # Configure zsh
 if pacman -Q zsh > /dev/null 2>&1; then
