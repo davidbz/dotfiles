@@ -174,8 +174,8 @@ bar {
 
 # Execs
 exec --no-startup-id /usr/bin/parcellite # Clipboard manager
-#exec --no-startup-id /usr/bin/compton --config ~/.config/compton/compton.conf # Compositor for window transparency
 exec --no-startup-id /usr/bin/setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:scroll us,il # Add hebrew
+exec_always --no-startup-id /usr/bin/compton --config ~/.config/compton/compton.conf -b # Compositor for window transparency
 
 # Set wallpaper
 exec_always --no-startup-id /usr/bin/feh --bg-scale ~/.wallpaper.jpg

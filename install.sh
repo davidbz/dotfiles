@@ -30,7 +30,8 @@ pacman -S xorg-xinit \
           zsh \
           compton \
           feh \
-          termite
+          termite \
+          termite-terminfo
 
 echo "Cleaning up cache"
 pacman -Sc
