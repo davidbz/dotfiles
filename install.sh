@@ -9,6 +9,7 @@ pacman -Sy
 pacman -S xorg-xinit \
           xorg \
           i3-gaps \
+          py3status \
           git \
           tar \
           wireshark-gtk \
@@ -33,6 +34,11 @@ pacman -S xorg-xinit \
           termite \
           termite-terminfo
 
+readonly YAY_PKGS="\
+     ttf-ms-fonts \
+     parcellite \
+"
+
 echo "Cleaning up cache"
 pacman -Sc
 
@@ -49,11 +55,6 @@ if pacman -Q yay > /dev/null 2>&1; then
      popd
      rm -rf /tmp/yay
 fi
-
-readonly YAY_PKGS="\
-     ttf-ms-fonts \
-     parcellite \
-"
 
 for pkg in ${YAY_PKGS}; do
      if ! yay -Q ${pkg} > /dev/null 2>&1; then
