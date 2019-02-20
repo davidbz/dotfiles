@@ -32,7 +32,8 @@ pacman -S xorg-xinit \
           compton \
           feh \
           termite \
-          termite-terminfo
+          termite-terminfo \
+          pacman-contrib
 
 readonly YAY_PKGS="\
      ttf-ms-fonts \
