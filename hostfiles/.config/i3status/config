@@ -7,8 +7,11 @@
 # If the above line is not correctly displayed, fix your editor first!
 
 general {
-        colors = true
-        interval = 5
+  colors = true
+  color_good = '#ebdbb2'
+  color_degraded = '#fabd2f'
+  color_bad = '#fb4934'
+  interval = 1
 }
 
 order += "ipv6"
@@ -18,6 +21,40 @@ order += "ethernet _first_"
 order += "battery all"
 order += "load"
 order += "tztime local"
+order += "arch_updates"
+order += "net_rate"
+order += "sysdata"
+order += 'keyboard_layout'
+
+
+arch_updates {
+	cache_timeout = 3600
+	hide_if_zero = true
+	format = "{pacman} "
+}
+
+net_rate {
+    format = "[\?color=#FFb000 {down} {up}]"
+    precision = 0
+    format_no_connection = ""
+    hide_if_zero = False
+    format_value = "{value:.1f}{unit}"
+    cache_timeout = 10
+}
+
+sysdata {
+    format = "[\?color=#E06C75 CPU:{cpu_usage}%] [\?color=#C678DD Mem:{mem_used}GB {mem_used_percent}%]"
+    cache_timeout = 10
+    on_click 1 = "exec --no-startup-id termite -e htop"
+}
+
+keyboard_layout {
+  cache_timeout = -1
+  button_prev = None
+  button_next = None
+  color_us = '#ebdbb2'
+  color_il = '#fb4934'
+}
 
 wireless _first_ {
         format_up = "W: (%quality at %essid) %ip"
@@ -35,7 +72,7 @@ battery all {
 }
 
 tztime local {
-        format = "%Y-%m-%d %H:%M:%S"
+        format = "%d-%m-%Y %H:%M:%S"
 }
 
 load {
