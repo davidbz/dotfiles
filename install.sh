@@ -34,7 +34,8 @@ pacman -S xorg-xinit \
           termite \
           termite-terminfo \
           pacman-contrib \
-          ttf-font-awesome
+          ttf-font-awesome \
+          thunar
 
 readonly YAY_PKGS="\
      ttf-ms-fonts \
