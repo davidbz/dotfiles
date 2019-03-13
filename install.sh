@@ -12,6 +12,7 @@ pacman -S xorg-xinit \
           py3status \
           git \
           tar \
+          unzip \
           wireshark-gtk \
           vim \
           htop \
