@@ -70,3 +70,5 @@ done
 if pacman -Q zsh > /dev/null 2>&1; then
 	chsh -s $(whereis zsh | awk '{print $2}')
 fi
+
+mkdir -p ~/.wallpapers/
