@@ -12,6 +12,7 @@ pacman -S xorg-xinit \
           py3status \
           git \
           tar \
+          unzip \
           wireshark-gtk \
           vim \
           htop \
@@ -35,7 +36,8 @@ pacman -S xorg-xinit \
           termite-terminfo \
           pacman-contrib \
           ttf-font-awesome \
-          thunar
+          thunar \
+          ripgrep
 
 readonly YAY_PKGS="\
      ttf-ms-fonts \
@@ -70,3 +72,5 @@ done
 if pacman -Q zsh > /dev/null 2>&1; then
 	chsh -s $(whereis zsh | awk '{print $2}')
 fi
+
+mkdir -p ~/.wallpapers/
