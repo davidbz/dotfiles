@@ -40,6 +40,7 @@ pacman -S xorg-xinit \
 readonly YAY_PKGS="\
      ttf-ms-fonts \
      parcellite \
+     deepin-screenshot \
 "
 
 echo "Cleaning up cache"
