@@ -17,10 +17,8 @@ pacman -S xorg-xinit \
           vim \
           htop \
           strace \
-          make \
-          gcc \
-          autoconf \
           gdb \
+          base-devel \
           cmake \
           docker \
           chromium \
@@ -37,7 +35,9 @@ pacman -S xorg-xinit \
           pacman-contrib \
           ttf-font-awesome \
           thunar \
-          ripgrep
+          ripgrep \
+          gnu-netcat \
+          dnsutils
 
 readonly YAY_PKGS="\
      ttf-ms-fonts \
