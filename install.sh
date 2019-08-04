@@ -17,6 +17,7 @@ pacman -S xorg-xinit \
           vim \
           htop \
           strace \
+	  ltrace \
           gdb \
           base-devel \
           cmake \
@@ -43,6 +44,7 @@ readonly YAY_PKGS="\
      ttf-ms-fonts \
      parcellite \
      deepin-screenshot \
+     ida-free \
 "
 
 echo "Cleaning up cache"
