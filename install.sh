@@ -38,7 +38,8 @@ pacman -S xorg-xinit \
           thunar \
           ripgrep \
           gnu-netcat \
-          dnsutils
+          dnsutils \
+          peek
 
 readonly YAY_PKGS="\
      ttf-ms-fonts \
