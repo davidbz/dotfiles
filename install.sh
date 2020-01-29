@@ -30,7 +30,6 @@ pacman -S xorg-xinit \
           coreutils \
           go \
           zsh \
-          compton \
           feh \
           gnome-terminal \
           pacman-contrib \
