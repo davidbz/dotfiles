@@ -31,8 +31,7 @@ pacman -S xorg-xinit \
           zsh \
           compton \
           feh \
-          termite \
-          termite-terminfo \
+          gnome-terminal \
           pacman-contrib \
           ttf-font-awesome \
           thunar \
