@@ -16,8 +16,9 @@ pacman -S xorg-xinit \
           wireshark-gtk \
           vim \
           htop \
+          dconf \
           strace \
-	  ltrace \
+	      ltrace \
           gdb \
           base-devel \
           cmake \
@@ -37,6 +38,7 @@ pacman -S xorg-xinit \
           thunar \
           ripgrep \
           gnu-netcat \
+          ttf-inconsolata \
           dnsutils \
           peek
 
@@ -45,6 +47,7 @@ readonly YAY_PKGS="\
      parcellite \
      deepin-screenshot \
      ida-free \
+     ttf-iosevka \
 "
 
 echo "Cleaning up cache"
@@ -76,3 +79,6 @@ if pacman -Q zsh > /dev/null 2>&1; then
 fi
 
 mkdir -p ~/.wallpapers/
+
+dconf load /org/gnome/terminal/ < gnome_profile.txt
+
