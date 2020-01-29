@@ -182,7 +182,7 @@ exec_always --no-startup-id compton -b # Compositor for window transparency
 exec_always --no-startup-id /usr/bin/feh --bg-scale ~/.wallpapers/*
 
 # Gaps
-gaps inner 25
+gaps inner 10
 gaps outer 0
 smart_borders on
 new_window none
