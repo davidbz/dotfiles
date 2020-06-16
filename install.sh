@@ -18,7 +18,8 @@ pacman -S xorg-xinit \
           htop \
           dconf \
           strace \
-	      ltrace \
+	  ltrace \
+	  ttf-dejavu \
           gdb \
           base-devel \
           cmake \
