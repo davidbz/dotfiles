@@ -39,7 +39,8 @@ pacman -S xorg-xinit \
           gnu-netcat \
           ttf-inconsolata \
           dnsutils \
-          peek
+          peek \
+	  powerline-fonts
 
 readonly YAY_PKGS="\
      ttf-ms-fonts \
