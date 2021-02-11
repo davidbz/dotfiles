@@ -34,7 +34,7 @@ pacman -S xorg-xinit \
           feh \
           gnome-terminal \
           pacman-contrib \
-          ttf-font-awesome \
+	  otf-font-awesome \
           thunar \
           ripgrep \
           gnu-netcat \
