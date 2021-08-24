@@ -9,7 +9,6 @@ pacman -Sy
 pacman -S xorg-xinit \
           xorg \
           i3 \
-          py3status \
           git \
           tar \
           unzip \
@@ -17,6 +16,7 @@ pacman -S xorg-xinit \
           vim \
           htop \
           curl \
+	  wget \
           strace \
 	  ltrace \
 	  ttf-dejavu \
@@ -26,7 +26,6 @@ pacman -S xorg-xinit \
           docker \
           chromium \
           openssh \
-          wget \
           nodejs \
           go \
           zsh \
@@ -43,16 +42,11 @@ readonly YAY_PKGS="\
      ttf-ms-fonts \
      parcellite \
      deepin-screenshot \
-     ida-free \
      ttf-iosevka \
 "
 
 echo "Cleaning up cache"
 pacman -Sc
-
-# Deploy vimrc
-git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
-sh ~/.vim_runtime/install_awesome_vimrc.sh
 
 # Deploy yay
 if pacman -Q yay > /dev/null 2>&1; then
