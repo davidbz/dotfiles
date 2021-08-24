@@ -16,7 +16,7 @@ pacman -S xorg-xinit \
           wireshark-gtk \
           vim \
           htop \
-          dconf \
+          curl \
           strace \
 	  ltrace \
 	  ttf-dejavu \
@@ -28,20 +28,16 @@ pacman -S xorg-xinit \
           openssh \
           wget \
           nodejs \
-          coreutils \
           go \
           zsh \
-          feh \
-          pacman-contrib \
-	  otf-font-awesome \
-          thunar \
-          ripgrep \
-          gnu-netcat \
-          ttf-inconsolata \
-          dnsutils \
           peek \
 	  powerline-fonts \
-	  termite
+	  termite \
+	  pulseaudio \
+	  alsa-utils
+
+systemctl --user enable pulseaudio
+systemctl enable docker.service
 
 readonly YAY_PKGS="\
      ttf-ms-fonts \
