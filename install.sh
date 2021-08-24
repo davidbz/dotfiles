@@ -8,7 +8,7 @@ pacman -Sy
 
 pacman -S xorg-xinit \
           xorg \
-          i3-gaps \
+          i3 \
           py3status \
           git \
           tar \
