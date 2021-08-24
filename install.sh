@@ -33,15 +33,15 @@ pacman -S xorg-xinit \
 	  powerline-fonts \
 	  termite \
 	  pulseaudio \
-	  alsa-utils
+	  alsa-utils \
+	  deepin-screenshot \
+	  parcellite
 
 systemctl --user enable pulseaudio
 systemctl enable docker.service
 
 readonly YAY_PKGS="\
      ttf-ms-fonts \
-     parcellite \
-     deepin-screenshot \
      ttf-iosevka \
 "
 
