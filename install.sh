@@ -41,7 +41,7 @@ pacman -S xorg-xinit \
           dnsutils \
           peek \
 	  powerline-fonts \
-	  rxvt-unicode
+	  termite
 
 readonly YAY_PKGS="\
      ttf-ms-fonts \
