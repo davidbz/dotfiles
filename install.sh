@@ -32,7 +32,6 @@ pacman -S xorg-xinit \
           go \
           zsh \
           feh \
-          gnome-terminal \
           pacman-contrib \
 	  otf-font-awesome \
           thunar \
@@ -41,7 +40,8 @@ pacman -S xorg-xinit \
           ttf-inconsolata \
           dnsutils \
           peek \
-	  powerline-fonts
+	  powerline-fonts \
+	  rxvt-unicode
 
 readonly YAY_PKGS="\
      ttf-ms-fonts \
@@ -80,6 +80,3 @@ if pacman -Q zsh > /dev/null 2>&1; then
 fi
 
 mkdir -p ~/.wallpapers/
-
-dconf load /org/gnome/terminal/ < gnome_profile.txt
-
