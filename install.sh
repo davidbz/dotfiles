@@ -12,7 +12,6 @@ pacman -S xorg-xinit \
           git \
           tar \
           unzip \
-          wireshark-gtk \
           vim \
           htop \
           curl \
@@ -44,6 +43,7 @@ systemctl enable dhcpcd.service
 readonly YAY_PKGS="\
      ttf-ms-fonts \
      ttf-iosevka \
+     wireshark-gtk \
 "
 
 echo "Cleaning up cache"
