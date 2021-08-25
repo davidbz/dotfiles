@@ -29,16 +29,17 @@ pacman -S xorg-xinit \
           nodejs \
           go \
           zsh \
-          peek \
 	  powerline-fonts \
 	  termite \
 	  pulseaudio \
 	  alsa-utils \
 	  deepin-screenshot \
-	  parcellite
+	  parcellite \
+	  dhcpcd
 
 systemctl --user enable pulseaudio
 systemctl enable docker.service
+systemctl enable dhcpcd.service
 
 readonly YAY_PKGS="\
      ttf-ms-fonts \
