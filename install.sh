@@ -34,7 +34,8 @@ pacman -S xorg-xinit \
 	  alsa-utils \
 	  deepin-screenshot \
 	  parcellite \
-	  dhcpcd
+	  dhcpcd \
+	  fzf
 
 systemctl --user enable pulseaudio
 systemctl enable docker.service
