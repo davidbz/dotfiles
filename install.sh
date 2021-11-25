@@ -6,10 +6,9 @@ pacman-key --refresh-keys
 echo "Refreshing mirrors"
 pacman -Sy
 
-pacman -S xorg-xinit \
-          xorg \
-          i3 \
-          git \
+pacman -S xorg-xinit xorg i3
+
+pacman -S git \
           tar \
           unzip \
           vim \
