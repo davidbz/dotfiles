@@ -6,7 +6,7 @@ pacman-key --refresh-keys
 echo "Refreshing mirrors"
 pacman -Sy
 
-pacman -S xorg-xinit xorg i3
+pacman -S xorg-xinit xorg i3-wm
 
 pacman -S git \
           tar \
