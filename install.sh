@@ -35,7 +35,8 @@ pacman -S git \
 	  parcellite \
 	  dhcpcd \
 	  fzf \
-	  screen
+	  screen \
+	  linux-firmware
 
 systemctl --user enable pulseaudio
 systemctl enable docker.service
