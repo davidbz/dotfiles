@@ -36,11 +36,13 @@ pacman -S git \
 	  dhcpcd \
 	  fzf \
 	  screen \
-	  linux-firmware
+	  linux-firmware \
+	  ntp
 
 systemctl --user enable pulseaudio
 systemctl enable docker.service
 systemctl enable dhcpcd.service
+systemctl enable ntpd.service
 
 readonly YAY_PKGS="\
      ttf-ms-fonts \
