@@ -1,77 +1,60 @@
 #!/bin/bash
 
+if [[ $EUID -eq 0 ]]; then
+  echo "This script must NOT be run as root"
+  exit 1
+fi
+
+readonly SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+
 echo "Refreshing pacman keys"
-pacman-key --refresh-keys
+sudo pacman-key --refresh-keys
 
 echo "Refreshing mirrors"
-pacman -Sy
+sudo pacman -Sy
 
-pacman -S xorg-xinit xorg i3-wm
-
-pacman -S git \
-          tar \
-          unzip \
-          vim \
-          htop \
-          curl \
-	  wget \
-          strace \
-	  ltrace \
-	  ttf-dejavu \
-          gdb \
-          base-devel \
-          cmake \
-          docker \
-          chromium \
-          openssh \
-          nodejs \
-          go \
-          zsh \
-	  powerline-fonts \
-	  termite \
-	  pulseaudio \
-	  alsa-utils \
-	  deepin-screenshot \
-	  parcellite \
-	  dhcpcd \
-	  fzf \
-	  screen \
-	  linux-firmware \
-	  ntp
-
-systemctl --user enable pulseaudio
-systemctl enable docker.service
-systemctl enable dhcpcd.service
-systemctl enable ntpd.service
-
-readonly YAY_PKGS="\
-     ttf-ms-fonts \
-     ttf-iosevka \
-     wireshark-gtk \
-"
+sudo pacman -S git \
+               tar \
+               unzip \
+               vim \
+               htop \
+               curl \
+               wget \
+               strace \
+               ltrace \
+               ttf-dejavu \
+               gdb \
+               base-devel \
+               cmake \
+               docker \
+               openssh \
+               nodejs \
+               go \
+               zsh \
+               powerline-fonts \
+               kitty \
+               deepin-screenshot \
+               parcellite \
+               fzf \
+               screen \
+               linux-firmware \
+               ntp
 
 echo "Cleaning up cache"
-pacman -Sc
+sudo pacman -Sc
 
 # Deploy yay
-if pacman -Q yay > /dev/null 2>&1; then
-     pushd /tmp/
-     git clone https://aur.archlinux.org/yay.git
-     cd yay
-     makepkg -si
-     popd
-     rm -rf /tmp/yay
+if ! pacman -Q yay > /dev/null 2>&1; then
+    pushd /tmp/
+    git clone https://aur.archlinux.org/yay.git
+    cd yay
+    makepkg -si --noconfirm
+    popd
+    rm -rf /tmp/yay
 fi
 
-for pkg in ${YAY_PKGS}; do
-     if ! yay -Q ${pkg} > /dev/null 2>&1; then
-          yay -S ${pkg}
-     fi
-done
+# Copy dotfiles
+echo "Deploying dotfiles"
+cp -r ${SCRIPT_DIR}/hostfiles/. ~/
 
-# Configure zsh
-if pacman -Q zsh > /dev/null 2>&1; then
-	chsh -s $(whereis zsh | awk '{print $2}')
-fi
-
-mkdir -p ~/.wallpapers/
+echo "All done!"

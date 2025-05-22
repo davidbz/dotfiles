@@ -7,5 +7,7 @@ Arch and i3-gaps.
 * Read [i3 docs](https://wiki.archlinux.org/index.php/i3)
 
 ## Installation
-* `install.sh`
-* copy hostfiles/* to ~/
+```bash
+./install.sh
+```
+
